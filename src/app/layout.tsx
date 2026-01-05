@@ -5,8 +5,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Toaster } from '@/components/ui/sonner';
 import { metadata as siteMetadata } from '@/lib/metadata';
-import { Analytics } from "@vercel/analytics/next"
-
+import { Analytics } from '@vercel/analytics/next';
 
 import './globals.css';
 

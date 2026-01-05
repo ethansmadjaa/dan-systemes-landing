@@ -10,7 +10,7 @@ import { menuItems } from '@/data/menuItems';
 import { siteDetails } from '@/data/siteDetails';
 import { Transition } from '@headlessui/react';
 
-import { Hamburger, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -59,8 +59,14 @@ const Header: React.FC = () => {
                             isScrolled ? 'md:py-2' : 'md:py-5'
                         }`}>
                         {/* Logo */}
-                        <Link href={'/'} className='flex items-center gap-2 rounded-lg bg-white px-3 py-2'>
-                            <Image src={siteDetails.siteLogo} alt={siteDetails.siteName} width={120} height={50} />
+                        <Link href={'/'} className='flex items-center rounded-lg bg-white/30 px-2 py-1'>
+                            <Image
+                                src={siteDetails.siteLogo}
+                                alt={siteDetails.siteName}
+                                width={180}
+                                height={75}
+                                className='h-auto w-[90px] md:w-[180px]'
+                            />
                         </Link>
 
                         {/* Desktop Menu */}
@@ -104,7 +110,7 @@ const Header: React.FC = () => {
                                 {isOpen ? (
                                     <X className='h-6 w-6' aria-hidden='true' />
                                 ) : (
-                                    <Hamburger className='h-6 w-6' aria-hidden='true' />
+                                    <Menu className='h-6 w-6' aria-hidden='true' />
                                 )}
                                 <span className='sr-only'>Toggle navigation</span>
                             </button>
@@ -116,32 +122,23 @@ const Header: React.FC = () => {
                 <Transition
                     show={isOpen}
                     enter='transition ease-out duration-200 transform'
-                    enterFrom='opacity-0 scale-95'
-                    enterTo='opacity-100 scale-100'
-                    leave='transition ease-in duration-75 transform'
-                    leaveFrom='opacity-100 scale-100'
-                    leaveTo='opacity-0 scale-95'>
-                    <div id='mobile-menu' className='bg-card shadow-lg md:hidden'>
-                        <ul className='flex flex-col space-y-4 px-6 pt-1 pb-6'>
+                    enterFrom='opacity-0 -translate-y-2'
+                    enterTo='opacity-100 translate-y-0'
+                    leave='transition ease-in duration-150 transform'
+                    leaveFrom='opacity-100 translate-y-0'
+                    leaveTo='opacity-0 -translate-y-2'>
+                    <div id='mobile-menu' className='bg-card relative z-10 shadow-lg md:hidden'>
+                        <ul className='flex flex-col space-y-4 px-6 pt-4 pb-6'>
                             {menuItems.map((item) => (
                                 <li key={item.text}>
                                     <Link
                                         href={item.url}
-                                        className='text-primary hover:text-accent block'
+                                        className='text-primary hover:text-accent block text-lg font-medium'
                                         onClick={toggleMenu}>
                                         {item.text}
                                     </Link>
                                 </li>
                             ))}
-
-                            <li>
-                                <Link
-                                    href={'/contact'}
-                                    className='text-primary hover:text-accent block'
-                                    onClick={toggleMenu}>
-                                    Contact
-                                </Link>
-                            </li>
                         </ul>
                     </div>
                 </Transition>

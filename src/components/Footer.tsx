@@ -19,8 +19,8 @@ const Footer: React.FC = () => {
             }}>
             <div className='mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-3'>
                 <div>
-                    <Link href='/' className='mb-4 flex w-fit items-center gap-2 rounded-lg bg-white px-3 py-2'>
-                        <Image src={siteDetails.siteLogo} alt={siteDetails.siteName} width={120} height={50} />
+                    <Link href='/' className='mb-4 flex w-fit items-center rounded-lg bg-white/30 px-2 py-1'>
+                        <Image src={siteDetails.siteLogo} alt={siteDetails.siteName} width={180} height={75} />
                     </Link>
                     <p className='text-primary-foreground/80'>{siteDetails.metadata.description}</p>
                 </div>
