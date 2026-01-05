@@ -16,5 +16,10 @@
         "lib": "@/lib",
         "hooks": "@/hooks"
     },
+    "registries": {
+        "@shadcnstore": {
+            "url": "https://shadcnstore.com/r/{name}.json"
+        }
+    },
     "iconLibrary": "lucide"
 }
