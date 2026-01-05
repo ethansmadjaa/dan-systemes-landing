@@ -6,13 +6,9 @@ import Image from 'next/image';
 
 import { siteDetails } from '@/data/siteDetails';
 import { footerDetails } from '@/data/footer';
+import { menuItems } from '@/data/menuItems';
 
 const Footer: React.FC = () => {
-    const quickLinks = [
-        { key: 'À propos', url: '#about' },
-        { key: 'Nos solutions', url: '#solutions' },
-        { key: 'Contact', url: '#contact' },
-    ];
 
     return (
         <footer
@@ -31,9 +27,9 @@ const Footer: React.FC = () => {
                 <div>
                     <p className="text-lg font-semibold mb-4">Liens rapides</p>
                     <ul className="text-primary-foreground/80">
-                        {quickLinks.map(link => (
-                            <li key={link.key} className="mb-2">
-                                <Link href={link.url} className="hover:text-primary-foreground">{link.key}</Link>
+                        {menuItems.map((item, index) => (
+                            <li key={index} className="mb-2">
+                                <Link href={item.url} className="hover:text-primary-foreground">{item.text}</Link>
                             </li>
                         ))}
                     </ul>

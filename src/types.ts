@@ -79,3 +79,11 @@ export interface ILogoCloud {
     svg?: string;
     alt: string;
 }
+
+export interface IService {
+    title: string;
+    description: string;
+    icon: ReactNode;
+    features?: string[];
+    href?: string;
+}
