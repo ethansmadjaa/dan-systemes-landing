@@ -4,12 +4,12 @@ export const siteDetails = {
     metadata: {
         title: 'Dan Systèmes | SolutionsIT pour les entreprises',
         description:
-            'Dan Systèmes accompagne les entreprises dans le choix, l\'intégration et l\'optimisation de leurs solutions IT.',
+            "Dan Systèmes accompagne les entreprises dans le choix, l'intégration et l'optimisation de leurs solutions IT."
     },
     language: 'fr-FR',
     locale: 'fr-FR',
     siteLogo: `${process.env.BASE_PATH || ''}/images/logo.png`,
     favicon: `${process.env.BASE_PATH || ''}/images/favicon/favicon.ico`,
     appleTouchIcon: `${process.env.BASE_PATH || ''}/images/favicon/apple-touch-icon.png`,
-    googleAnalyticsId: 'G-XXXXXXXXXX',
-}
+    googleAnalyticsId: 'G-XXXXXXXXXX'
+};

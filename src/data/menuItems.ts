@@ -1,19 +1,19 @@
-import { IMenuItem } from "@/types";
+import { IMenuItem } from '@/types';
 
 export const menuItems: IMenuItem[] = [
     {
-        text: "À propos",
-        url: "/#about",
+        text: 'À propos',
+        url: '/#about',
         highlight: false
     },
     {
-        text: "Nos services",
-        url: "/#services",
+        text: 'Nos services',
+        url: '/#services',
         highlight: false
     },
     {
-        text: "Contact",
-        url: "/contact",
+        text: 'Contact',
+        url: '/contact',
         highlight: true
     }
 ];

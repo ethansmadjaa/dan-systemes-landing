@@ -10,7 +10,7 @@ export interface IBenefit {
     title: string;
     description: string;
     imageSrc: string;
-    bullets: IBenefitBullet[]
+    bullets: IBenefitBullet[];
 }
 
 export interface IBenefitBullet {
@@ -70,7 +70,6 @@ export interface IBlogPost {
     coverImage?: string;
     tags?: string[];
 }
-
 
 export interface ILogoCloud {
     url: string;

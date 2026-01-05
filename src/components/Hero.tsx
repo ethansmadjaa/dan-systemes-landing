@@ -1,33 +1,31 @@
 'use client';
 
+import React from 'react';
+
+import NextLink from 'next/link';
+
 import { heroDetails } from '@/data/hero';
 import { Button } from '@headlessui/react';
-import NextLink from 'next/link';
-import React from 'react';
 
 const Hero: React.FC = () => {
     return (
-        <section
-            id="hero"
-            className="relative flex items-center justify-center pb-0 pt-32 md:pt-40 px-5"
-        >
-            <div className="absolute left-0 top-0 bottom-0 -z-10 w-full">
-                <div className="absolute inset-0 h-full w-full bg-hero-background bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]">
-                </div>
+        <section id='hero' className='relative flex items-center justify-center px-5 pt-32 pb-0 md:pt-40'>
+            <div className='absolute top-0 bottom-0 left-0 -z-10 w-full'>
+                <div className='bg-hero-background absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)] bg-[size:40px_40px]'></div>
             </div>
 
-            <div className="absolute left-0 right-0 bottom-0 backdrop-blur-[2px] h-40 bg-linear-gradient(to bottom, transparent, rgba(233,238,255,0.5), rgba(202,208,230,0.5))">
-            </div>
+            <div className='bg-linear-gradient(to bottom, transparent, rgba(233,238,255,0.5), rgba(202,208,230,0.5)) absolute right-0 bottom-0 left-0 h-40 backdrop-blur-[2px]'></div>
 
-            <div className="text-center relative z-10 pb-10">
-                <h1 className="text-4xl md:text-6xl md:leading-tight font-bold text-foreground max-w-lg md:max-w-2xl mx-auto">{heroDetails.heading}</h1>
-                <p className="mt-4 text-foreground max-w-lg mx-auto">{heroDetails.subheading}</p>
-                <div className="mt-6 flex flex-col sm:flex-row items-center sm:gap-4 w-fit mx-auto">
+            <div className='relative z-10 pb-10 text-center'>
+                <h1 className='text-foreground mx-auto max-w-lg text-4xl font-bold md:max-w-2xl md:text-6xl md:leading-tight'>
+                    {heroDetails.heading}
+                </h1>
+                <p className='text-foreground mx-auto mt-4 max-w-lg'>{heroDetails.subheading}</p>
+                <div className='mx-auto mt-6 flex w-fit flex-col items-center sm:flex-row sm:gap-4'>
                     <Button
                         as={NextLink}
-                        href="/contact"
-                        className="bg-accent text-accent-foreground font-semibold px-8 py-4 rounded-lg text-lg shadow-[0_4px_0_0_var(--primary-dark)] hover:shadow-[0_2px_0_0_var(--primary-dark)] hover:translate-y-[2px] transition-all duration-150 border-2 border-primary-dark"
-                    >
+                        href='/contact'
+                        className='bg-accent text-accent-foreground border-primary-dark rounded-lg border-2 px-8 py-4 text-lg font-semibold shadow-[0_4px_0_0_var(--primary-dark)] transition-all duration-150 hover:translate-y-[2px] hover:shadow-[0_2px_0_0_var(--primary-dark)]'>
                         Contactez-nous
                     </Button>
                 </div>

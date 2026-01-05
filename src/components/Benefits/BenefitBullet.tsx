@@ -1,27 +1,20 @@
-import { motion, Variants } from "framer-motion"
+import { IBenefitBullet } from '@/types';
 
-import { IBenefitBullet } from "@/types"
-import { childVariants } from "./BenefitSection"
+import { childVariants } from './BenefitSection';
+import { Variants, motion } from 'framer-motion';
 
 const BenefitBullet: React.FC<IBenefitBullet> = ({ title, description, icon }: IBenefitBullet) => {
     return (
         <motion.div
-            className="flex flex-col items-center mt-8 gap-3 lg:gap-5 lg:flex-row lg:items-start"
-            variants={childVariants as Variants}
-        >
-            <div className="flex justify-center mx-auto lg:mx-0 shrink-0 mt-3 w-fit">
-                {icon}
-            </div>
+            className='mt-8 flex flex-col items-center gap-3 lg:flex-row lg:items-start lg:gap-5'
+            variants={childVariants as Variants}>
+            <div className='mx-auto mt-3 flex w-fit shrink-0 justify-center lg:mx-0'>{icon}</div>
             <div>
-                <p className="text-lg font-semibold">
-                    {title}
-                </p>
-                <p className="text-base text-foreground-accent">
-                    {description}
-                </p>
+                <p className='text-lg font-semibold'>{title}</p>
+                <p className='text-foreground-accent text-base'>{description}</p>
             </div>
         </motion.div>
-    )
-}
+    );
+};
 
-export default BenefitBullet
+export default BenefitBullet;

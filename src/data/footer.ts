@@ -1,4 +1,4 @@
-import { IMenuItem, ISocials } from "@/types";
+import { IMenuItem, ISocials } from '@/types';
 
 export const footerDetails: {
     subheading: string;
@@ -7,27 +7,27 @@ export const footerDetails: {
     telephone?: string;
     socials: ISocials;
 } = {
-    subheading: "TO_FILL",
+    subheading: 'TO_FILL',
     quickLinks: [
         {
-            text: "TO_FILL",
-            url: "#TO_FILL"
+            text: 'TO_FILL',
+            url: '#TO_FILL'
         },
         {
-            text: "TO_FILL",
-            url: "/confidentiality"
+            text: 'TO_FILL',
+            url: '/confidentiality'
         },
         {
-            text: "TO_FILL",
-            url: "/privacy"
+            text: 'TO_FILL',
+            url: '/privacy'
         },
         {
-            text: "TO_FILL",
-            url: "/terms"
+            text: 'TO_FILL',
+            url: '/terms'
         },
         {
-            text: "TO_FILL",
-            url: "/delete"
+            text: 'TO_FILL',
+            url: '/delete'
         }
     ],
     email: 'armand@dansystemes.com',
@@ -41,4 +41,4 @@ export const footerDetails: {
         // threads: 'https://www.threads.net',
         //instagram: 'https://www.instagram.com',
     }
-}
+};
