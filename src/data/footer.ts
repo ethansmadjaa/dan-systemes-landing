@@ -4,7 +4,7 @@ export const footerDetails: {
     subheading: string;
     quickLinks: IMenuItem[];
     email: string;
-    telephone: string;
+    telephone?: string;
     socials: ISocials;
 } = {
     subheading: "TO_FILL",
@@ -30,8 +30,7 @@ export const footerDetails: {
             url: "/delete"
         }
     ],
-    email: 'TO_FILL',
-    telephone: 'TO_FILL',
+    email: 'armand@dansystemes.com',
     socials: {
         // github: 'https://github.com',
         // x: 'https://twitter.com/x',
