@@ -67,9 +67,18 @@ const Header: React.FC = () => {
                     <ul className="hidden md:flex items-center space-x-6">
                         {menuItems.map(item => (
                             <li key={item.text}>
-                                <Link href={item.url} className={`transition-colors ${isScrolled ? 'text-primary hover:text-accent' : 'text-primary-foreground hover:text-accent'} ${item.highlight ? 'font-semibold' : ''}`}>
-                                    <span>{item.text}</span>
-                                </Link>
+                                {item.highlight ? (
+                                    <Link
+                                        href={item.url}
+                                        className="bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-lg shadow-[0_4px_0_0_var(--primary-dark)] hover:shadow-[0_2px_0_0_var(--primary-dark)] hover:translate-y-[2px] transition-all duration-150 border-2 border-primary-dark"
+                                    >
+                                        {item.text}
+                                    </Link>
+                                ) : (
+                                    <Link href={item.url} className={`transition-colors ${isScrolled ? 'text-primary hover:text-accent' : 'text-primary-foreground hover:text-accent'}`}>
+                                        <span>{item.text}</span>
+                                    </Link>
+                                )}
                             </li>
                         ))}
                     </ul>
