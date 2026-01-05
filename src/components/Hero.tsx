@@ -23,7 +23,11 @@ const Hero: React.FC = () => {
                 <h1 className="text-4xl md:text-6xl md:leading-tight font-bold text-foreground max-w-lg md:max-w-2xl mx-auto">{heroDetails.heading}</h1>
                 <p className="mt-4 text-foreground max-w-lg mx-auto">{heroDetails.subheading}</p>
                 <div className="mt-6 flex flex-col sm:flex-row items-center sm:gap-4 w-fit mx-auto">
-                    <Button as={NextLink} href="/contact">
+                    <Button
+                        as={NextLink}
+                        href="/contact"
+                        className="bg-accent text-accent-foreground font-semibold px-8 py-4 rounded-lg text-lg shadow-[0_4px_0_0_var(--primary-dark)] hover:shadow-[0_2px_0_0_var(--primary-dark)] hover:translate-y-[2px] transition-all duration-150 border-2 border-primary-dark"
+                    >
                         Contactez-nous
                     </Button>
                 </div>

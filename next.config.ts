@@ -10,7 +10,13 @@ const withBundleAnalyzer = initializeBundleAnalyzer({
 // https://nextjs.org/docs/pages/api-reference/next-config-js
 const nextConfig: NextConfig = {
     output: 'standalone',
+    allowedDevOrigins: [
+        'localhost:3000',
+        '127.0.0.1:3000',
+        '*.ngrok-free.app',
+    ],
     images: {
+        qualities: [75, 100],
         remotePatterns: [
             {
                 protocol: 'https',
