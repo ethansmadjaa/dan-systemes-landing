@@ -6,7 +6,8 @@
     "license": "MIT",
     "scripts": {
         "dev": "next dev --turbopack",
-        "build": "next build --turbopack",
+        "build": "tsc --noEmit  && eslint --fix \"src/**/*.{js,jsx,ts,tsx}\" && prettier --write \"src/**/*.{js,jsx,ts,tsx}\" && next build --turbopack",
+        "build:production": "next build --turbopack",
         "start": "next start",
         "lint": "next lint",
         "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
