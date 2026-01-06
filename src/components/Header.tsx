@@ -144,7 +144,7 @@ const Header: React.FC = () => {
                 </Transition>
             </header>
             {/* Spacer pour éviter que le contenu soit caché sous le header fixe */}
-            <div className='h-16 md:h-24' />
+            <div className='h-10 md:h-16' />
         </>
     );
 };

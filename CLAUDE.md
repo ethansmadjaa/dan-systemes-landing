@@ -90,3 +90,7 @@ always run THIS COMMAND after any changes
 ```bash
 pnpm build
 ```
+
+
+each age shoul have a cannonical url a metadata tag and everything related to seo 
+
