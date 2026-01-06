@@ -50,35 +50,42 @@ export const logoCloudNetwork: ILogoCloud[] = [
     {
         url: 'https://www.apc.com',
         name: 'APC',
+        image: `${process.env.BASE_PATH || ''}/images/companies/apc.svg`,
         alt: 'APC'
     },
     {
         url: 'https://www.bitdefender.com',
         name: 'Bitdefender',
+        image: `${process.env.BASE_PATH || ''}/images/companies/bitdefender.svg`,
         alt: 'Bitdefender'
     },
     {
         url: 'https://www.cisco.com',
         name: 'Cisco',
+        image: `${process.env.BASE_PATH || ''}/images/companies/cisco.svg`,
         alt: 'Cisco'
     },
     {
         url: 'https://www.extremenetworks.com/',
+        image: `${process.env.BASE_PATH || ''}/images/companies/extremenetworks.svg`,
         name: 'Extreme Networks',
         alt: 'Extreme Networks'
     },
     {
         url: 'https://www.f5.com',
+        image: `${process.env.BASE_PATH || ''}/images/companies/f5.svg`,
         name: 'F5',
         alt: 'F5'
     },
     {
         url: 'https://www.hpe.com',
+        image: `${process.env.BASE_PATH || ''}/images/companies/hpe.svg`,
         name: 'HPE',
         alt: 'HPE'
     },
     {
         url: 'https://www.poly.com',
+        image: `${process.env.BASE_PATH || ''}/images/companies/poly.png`,
         name: 'Poly',
         alt: 'Poly'
     }
