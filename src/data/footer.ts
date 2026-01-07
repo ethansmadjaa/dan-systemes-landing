@@ -1,5 +1,7 @@
 import { IMenuItem, ISocials } from '@/types';
 
+import { siteDetails } from './siteDetails';
+
 export const footerDetails: {
     subheading: string;
     quickLinks: IMenuItem[];
@@ -7,38 +9,8 @@ export const footerDetails: {
     telephone?: string;
     socials: ISocials;
 } = {
-    subheading: 'TO_FILL',
-    quickLinks: [
-        {
-            text: 'TO_FILL',
-            url: '#TO_FILL'
-        },
-        {
-            text: 'TO_FILL',
-            url: '/confidentiality'
-        },
-        {
-            text: 'TO_FILL',
-            url: '/privacy'
-        },
-        {
-            text: 'TO_FILL',
-            url: '/terms'
-        },
-        {
-            text: 'TO_FILL',
-            url: '/delete'
-        }
-    ],
+    subheading: siteDetails.metadata.description,
+    quickLinks: [],
     email: 'info@dansystemes.com',
-    socials: {
-        // github: 'https://github.com',
-        // x: 'https://twitter.com/x',
-        //twitter: 'https://twitter.com/Twitter',
-        //facebook: 'https://facebook.com',
-        // youtube: 'https://youtube.com',
-        //linkedin: 'https://www.linkedin.com',
-        // threads: 'https://www.threads.net',
-        //instagram: 'https://www.instagram.com',
-    }
+    socials: {}
 };

@@ -55,11 +55,15 @@ const Header: React.FC = () => {
                 />
                 <Container className='relative px-0'>
                     <nav
+                        aria-label='Navigation principale'
                         className={`mx-auto flex items-center justify-between px-5 py-2 shadow-md transition-all duration-500 ease-in-out md:bg-transparent md:shadow-none ${
                             isScrolled ? 'md:py-2' : 'md:py-5'
                         }`}>
                         {/* Logo */}
-                        <Link href={'/'} className='flex flex-col items-start'>
+                        <Link
+                            href={'/'}
+                            className='flex flex-col items-start'
+                            aria-label="Dan Systèmes - Retour à l'accueil">
                             <Image
                                 src={siteDetails.siteLogo}
                                 alt={siteDetails.siteName}
@@ -74,7 +78,7 @@ const Header: React.FC = () => {
                         </Link>
 
                         {/* Desktop Menu */}
-                        <ul className='hidden items-center space-x-6 md:flex'>
+                        <ul className='hidden items-center space-x-6 md:flex' role='list' aria-label='Menu principal'>
                             {menuItems.map((item) => (
                                 <li key={item.text}>
                                     {item.highlight ? (
@@ -116,7 +120,7 @@ const Header: React.FC = () => {
                                 ) : (
                                     <Menu className='h-6 w-6' aria-hidden='true' />
                                 )}
-                                <span className='sr-only'>Toggle navigation</span>
+                                <span className='sr-only'>Ouvrir ou fermer le menu de navigation</span>
                             </button>
                         </div>
                     </nav>

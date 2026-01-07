@@ -73,6 +73,7 @@ const LogoCloud = ({ title, subtitle, logos, variant = 'logo', className }: Logo
                                     href={item.url}
                                     target='_blank'
                                     rel='noopener noreferrer'
+                                    aria-label={`Visiter le site de ${item.name || item.alt}`}
                                     className='group flex shrink-0 items-center justify-center transition-opacity hover:opacity-100'>
                                     {item.svg ? (
                                         <div
@@ -99,6 +100,7 @@ const LogoCloud = ({ title, subtitle, logos, variant = 'logo', className }: Logo
                                     href={item.url}
                                     target='_blank'
                                     rel='noopener noreferrer'
+                                    aria-label={`Visiter le site de ${item.name || item.alt}`}
                                     className='group flex shrink-0 items-center justify-center transition-opacity hover:opacity-100'>
                                     {item.svg ? (
                                         <div
@@ -145,6 +147,7 @@ const LogoCloud = ({ title, subtitle, logos, variant = 'logo', className }: Logo
                                     href={item.url}
                                     target='_blank'
                                     rel='noopener noreferrer'
+                                    aria-label={`Visiter le site de ${item.name || item.alt}`}
                                     className='group flex min-w-0 flex-1 items-center justify-center transition-opacity hover:opacity-100'>
                                     {variant === 'logo' && item.svg ? (
                                         <div

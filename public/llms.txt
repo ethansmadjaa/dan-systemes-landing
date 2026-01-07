@@ -1,0 +1,31 @@
+# Dan Systèmes - LLMs.txt
+
+> Dan Systèmes est un revendeur français de solutions IT et électroniques pour les entreprises.
+
+## À propos
+
+Dan Systèmes accompagne les entreprises dans le choix, l'intégration et l'optimisation de leurs solutions informatiques. Notre expertise couvre le conseil, l'achat, la configuration et le support technique.
+
+## Services
+
+- **Conseil et Accompagnement**: Audit de votre infrastructure et recommandations personnalisées
+- **Solutions Matérielles**: Ordinateurs, serveurs, équipements réseau, périphériques
+- **Solutions Logicielles**: Licences, déploiement, configuration
+- **Support Technique**: Maintenance, dépannage, assistance
+- **Infrastructure Réseau**: Conception, déploiement, sécurisation
+- **Cybersécurité**: Protection des données et des systèmes
+
+## Contact
+
+- Site web: https://www.dansystemes.fr
+- Email: contact@dansystemes.fr
+
+## Partenaires
+
+Dan Systèmes travaille avec les plus grands constructeurs et éditeurs du marché IT pour offrir des solutions adaptées à chaque besoin.
+
+## Informations légales
+
+Ce site est la propriété de Dan Systèmes.
+Langue: Français
+Localisation: France

@@ -26,6 +26,7 @@ const Hero: React.FC = () => {
                     <Button
                         as={NextLink}
                         href='/contact?source=project'
+                        aria-label='Parlez-nous de votre projet IT - Accéder au formulaire de contact'
                         className='bg-accent text-accent-foreground border-primary-dark rounded-lg border-2 px-8 py-4 text-lg font-semibold shadow-[0_4px_0_0_var(--primary-dark)] transition-all duration-150 hover:translate-y-[2px] hover:shadow-[0_2px_0_0_var(--primary-dark)]'>
                         Parlez nous de votre projet
                     </Button>

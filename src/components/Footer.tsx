@@ -13,6 +13,8 @@ import { siteDetails } from '@/data/siteDetails';
 const Footer: React.FC = () => {
     return (
         <footer
+            role='contentinfo'
+            aria-label='Pied de page'
             className='text-primary-foreground py-10'
             style={{
                 background:
@@ -20,7 +22,10 @@ const Footer: React.FC = () => {
             }}>
             <div className='mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-3'>
                 <div>
-                    <Link href='/' className='mb-4 flex w-fit flex-col items-start'>
+                    <Link
+                        href='/'
+                        className='mb-4 flex w-fit flex-col items-start'
+                        aria-label="Dan Systèmes - Retour à l'accueil">
                         <Image src={siteDetails.siteLogo} alt={siteDetails.siteName} width={180} height={75} />
                         <span className='text-primary-foreground -mt-2 text-xs italic'>
                             Votre partenaire IT depuis 2003
@@ -30,7 +35,7 @@ const Footer: React.FC = () => {
                 </div>
                 <div>
                     <p className='mb-4 text-lg font-semibold'>Liens rapides</p>
-                    <ul className='text-primary-foreground/80'>
+                    <ul className='text-primary-foreground/80' role='list' aria-label='Liens rapides'>
                         {menuItems.map((item, index) => (
                             <li key={index} className='mb-2'>
                                 <Link href={item.url} className='hover:text-primary-foreground'>
@@ -46,7 +51,8 @@ const Footer: React.FC = () => {
                     {footerDetails.email && (
                         <a
                             href={`mailto:${footerDetails.email}`}
-                            className='text-primary-foreground/80 hover:text-primary-foreground block'>
+                            className='text-primary-foreground/80 hover:text-primary-foreground block'
+                            aria-label={`Envoyer un email à ${footerDetails.email}`}>
                             Email: {footerDetails.email}
                         </a>
                     )}
@@ -54,7 +60,8 @@ const Footer: React.FC = () => {
                     {footerDetails.telephone && (
                         <a
                             href={`tel:${footerDetails.telephone}`}
-                            className='text-primary-foreground/80 hover:text-primary-foreground block'>
+                            className='text-primary-foreground/80 hover:text-primary-foreground block'
+                            aria-label={`Appeler le ${footerDetails.telephone}`}>
                             Téléphone: {footerDetails.telephone}
                         </a>
                     )}
