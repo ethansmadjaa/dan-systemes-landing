@@ -91,6 +91,4 @@ always run THIS COMMAND after any changes
 pnpm build
 ```
 
-
-each age shoul have a cannonical url a metadata tag and everything related to seo 
-
+each page should have a cannonical url a metadata tag and everything related to seo
