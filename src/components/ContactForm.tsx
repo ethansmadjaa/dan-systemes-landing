@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { generateEmailTemplate } from '@/lib/emailTemplate';
+import { EmailFormData, generateEmailTemplate } from '@/lib/emailTemplate';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 import { toast } from 'sonner';
@@ -40,12 +40,14 @@ const ContactForm: React.FC = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [captchaToken, setCaptchaToken] = useState<string | null>(null);
     const captchaRef = useRef<HCaptcha>(null);
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<EmailFormData>({
         name: '',
         email: '',
         phone: '',
         company: '',
-        message: ''
+        message: '',
+        type: variant === 'project' ? 'project' : 'contact',
+        captchaToken: ''
     });
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -53,25 +55,52 @@ const ContactForm: React.FC = () => {
 
         if (!captchaToken) {
             toast.error('Veuillez compléter le captcha');
+            captchaRef.current?.resetCaptcha();
+            setCaptchaToken(null);
 
             return;
         }
 
         setIsSubmitting(true);
 
-        const response = await fetch('/api/mail', {
-            method: 'POST',
-            body: JSON.stringify({ ...formData, captchaToken })
-        });
+        try {
+            const response = await fetch('/api/mail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    type: variant === 'project' ? 'project' : 'contact',
+                    captchaToken
+                })
+            });
 
-        setIsSubmitting(false);
-        captchaRef.current?.resetCaptcha();
-        setCaptchaToken(null);
+            const result = await response.json();
 
-        if (response.ok) {
-            toast.success('Votre demande a été envoyée avec succès');
-        } else {
+            if (!response.ok) {
+                toast.error(result.error || "Une erreur est survenue lors de l'envoi du message");
+
+                return;
+            }
+
+            toast.success('Votre message a été envoyé avec succès !');
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                company: '',
+                message: '',
+                type: variant === 'project' ? 'project' : 'contact',
+                captchaToken: ''
+            });
+        } catch (error) {
+            console.error(error);
             toast.error("Une erreur est survenue lors de l'envoi du message");
+        } finally {
+            setIsSubmitting(false);
+            captchaRef.current?.resetCaptcha();
+            setCaptchaToken(null);
         }
     };
 
@@ -101,8 +130,10 @@ const ContactForm: React.FC = () => {
                                         email: 'ethan@smadja.biz',
                                         phone: '1234567890',
                                         company: 'Example Inc.',
-                                        message: 'Test message'
-                                    });
+                                        message: `Test message ${variant === 'project' ? 'project' : 'contact'}`,
+                                        type: variant as 'contact' | 'project',
+                                        captchaToken: ''
+                                    } as EmailFormData);
                                 }}>
                                 Fill form
                             </Button>
@@ -116,14 +147,14 @@ const ContactForm: React.FC = () => {
                                     email: 'ethan@smadja.biz',
                                     phone: '1234567890',
                                     company: 'Example Inc.',
-                                    message: 'Test message'
+                                    message: 'Test message',
+                                    type: variant as 'contact' | 'project',
+                                    captchaToken: ''
                                 })
                             }}
                         />
                     </>
                 )}
-                <div className='flex flex-col gap-4'></div>
-
                 <form
                     onSubmit={handleSubmit}
                     className='bg-card/50 space-y-6 rounded-xl border p-6 shadow-sm backdrop-blur-sm md:p-8'>

@@ -36,3 +36,5 @@ yarn-error.log*
 next-env.d.ts
 
 .env
+.playwright-mcp/page-2026-01-07T16-34-55-818Z.png
+.playwright-mcp/page-2026-01-07T16-35-23-969Z.png

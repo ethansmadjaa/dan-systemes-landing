@@ -4,10 +4,29 @@ export interface EmailFormData {
     phone: string;
     company: string;
     message: string;
+    captchaToken: string;
+    type: 'contact' | 'project';
+}
+
+function escapeHtml(text: string): string {
+    const htmlEntities: Record<string, string> = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+    };
+
+    return text.replace(/[&<>"']/g, (char) => htmlEntities[char]);
 }
 
 export function generateEmailTemplate(data: EmailFormData) {
-    const { name, email, phone, company, message } = data;
+    const name = escapeHtml(data.name);
+    const email = escapeHtml(data.email);
+    const phone = data.phone ? escapeHtml(data.phone) : '';
+    const company = escapeHtml(data.company);
+    const message = data.message ? escapeHtml(data.message) : '';
+    const { type } = data;
 
     return `
 <!DOCTYPE html>
@@ -33,7 +52,7 @@ export function generateEmailTemplate(data: EmailFormData) {
                                     </td>
                                 </tr>
                             </table>
-                            <p style="margin: 15px 0 0 0; color: #a8c823; font-size: 14px; font-weight: 700; font-style: italic;">Votre partenaire IT depuis 2003</p>
+                            <p style="margin: 15px 0 0 0; color: #a8c823; font-size: 14px; font-weight: 700; font-style: italic;">${type === 'contact' ? 'Vous nous avez contactés' : 'Vous nous avez soumis un projet'}</p>
                         </td>
                     </tr>
 
@@ -41,11 +60,11 @@ export function generateEmailTemplate(data: EmailFormData) {
                     <tr>
                         <td style="padding: 40px;">
                             <h2 style="margin: 0 0 20px 0; color: #0c2760; font-size: 22px; font-weight: 600;">
-                                Merci pour votre demande !
+                                Merci pour ${type === 'contact' ? 'votre message' : 'votre confiance'} !
                             </h2>
                             <p style="margin: 0 0 25px 0; color: #555555; font-size: 16px; line-height: 1.6;">
                                 Bonjour <strong>${name}</strong>,<br><br>
-                                Nous avons bien reçu votre demande de contact et nous vous en remercions. Notre équipe vous répondra dans les plus brefs délais.
+                                Nous avons bien reçu votre ${type === 'contact' ? 'demande de contact' : 'projet'} et nous vous en remercions. Notre équipe vous répondra dans les plus brefs délais.
                             </p>
 
                             <!-- Recap Box -->
@@ -53,7 +72,7 @@ export function generateEmailTemplate(data: EmailFormData) {
                                 <tr>
                                     <td style="padding: 25px;">
                                         <h3 style="margin: 0 0 20px 0; color: #0c2760; font-size: 16px; font-weight: 600; border-bottom: 2px solid #a8c823; padding-bottom: 10px;">
-                                            Récapitulatif de votre demande
+                                            Récapitulatif de votre ${type === 'contact' ? 'demande de contact' : 'projet'}
                                         </h3>
 
                                         <table role="presentation" style="width: 100%; border-collapse: collapse;">

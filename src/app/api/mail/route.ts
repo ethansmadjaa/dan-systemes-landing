@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { generateEmailTemplate } from '@/lib/emailTemplate';
+import { EmailFormData, generateEmailTemplate } from '@/lib/emailTemplate';
 
 import { Resend } from 'resend';
 
@@ -24,22 +24,28 @@ async function verifyCaptcha(token: string): Promise<boolean> {
 }
 
 export async function POST(request: NextRequest) {
-    const { name, email, phone, company, message, captchaToken } = await request.json();
-
-    if (!captchaToken) {
-        return NextResponse.json({ error: 'Captcha manquant' }, { status: 400 });
+    let formData: EmailFormData;
+    try {
+        formData = await request.json();
+    } catch (error) {
+        return NextResponse.json({ error: 'Format de données invalide' }, { status: 400 });
     }
 
-    const isCaptchaValid = await verifyCaptcha(captchaToken);
+    if (!formData.captchaToken) {
+        return NextResponse.json({ error: 'Captcha manquant' }, { status: 400, statusText: 'Captcha manquant' });
+    }
+
+    const isCaptchaValid = await verifyCaptcha(formData.captchaToken);
     if (!isCaptchaValid) {
-        return NextResponse.json({ error: 'Captcha invalide' }, { status: 400 });
+        return NextResponse.json({ error: 'Captcha invalide' }, { status: 400, statusText: 'Captcha invalide' });
     }
 
-    const htmlContent = generateEmailTemplate({ name, email, phone, company, message });
+    const htmlContent = generateEmailTemplate(formData);
 
     const { data, error } = await resend.emails.send({
         from: 'Dan Systemes <info@dansystemes.com>',
-        to: email,
+        to: formData.email,
+        replyTo: 'info@dansystemes.com',
         bcc: ['info@dansystemes.com', 'ethan@smadja.biz'],
         subject: 'Confirmation de votre demande - Dan Systèmes',
         html: htmlContent
