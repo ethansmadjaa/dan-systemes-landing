@@ -16,6 +16,6 @@ export const stats: IStats[] = [
     {
         title: '30+',
         icon: <Globe size={34} className='text-green-600' />,
-        description: 'Countries where families use Fidjoo to build stories and share magical moments.'
+        description: 'Countries where families use Dansystemes to build stories and share magical moments.'
     }
 ];

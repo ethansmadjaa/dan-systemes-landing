@@ -9,21 +9,21 @@ export const benefitsText: IBenefit[] = [
         description:
             "Nous plaçons la performance, la durabilité et l'innovation au cœur de notre positionnement afin de renforcer la compétitivité de nos clients. En tant que revendeur IT s'appuyant sur un canal de distribution indirect, nous avons accès à l'ensemble des constructeurs hardware et software du marché, ce qui nous permet de proposer des solutions innovantes, rentables et parfaitement adaptées à des décisions stratégiques et pérennes.",
         bullets: [],
-        imageSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgbUl4rlsOypCdK5ZMfmBWMtTqr2MJOyt9Ow&s'
+        imageSrc: '/images/benefits/1.jpg'
     },
     {
         title: 'Notre Accompagnement',
         description:
             'La bonne solution, pour le bon usage, au juste prix. Grâce à une écoute attentive et à notre expertise du marché, nous vous orientons vers les plateformes et technologies les plus adaptées à vos besoins.',
         bullets: [],
-        imageSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgbUl4rlsOypCdK5ZMfmBWMtTqr2MJOyt9Ow&s'
+        imageSrc: '/images/benefits/3.jpg'
     },
     {
         title: 'Notre Offre',
         description:
             'Des offres transparentes, au juste prix. Nous comparons des solutions équivalentes et mettons en concurrence les constructeurs afin de garantir le meilleur rapport qualité-prix, en parfaite adéquation avec vos exigences.',
         bullets: [],
-        imageSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgbUl4rlsOypCdK5ZMfmBWMtTqr2MJOyt9Ow&s'
+        imageSrc: '/images/benefits/2.jpg'
     }
 ];
 
@@ -50,7 +50,7 @@ export const benefitsBullets: IBenefit[] = [
                 icon: <Target size={26} />
             }
         ],
-        imageSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgbUl4rlsOypCdK5ZMfmBWMtTqr2MJOyt9Ow&s'
+        imageSrc: '/images/benefits/1.jpg'
     },
     {
         title: 'Notre Accompagnement',
@@ -72,7 +72,7 @@ export const benefitsBullets: IBenefit[] = [
                 icon: <Handshake size={26} />
             }
         ],
-        imageSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgbUl4rlsOypCdK5ZMfmBWMtTqr2MJOyt9Ow&s'
+        imageSrc: '/images/benefits/3.jpg'
     },
     {
         title: 'Notre Offre',
@@ -94,6 +94,6 @@ export const benefitsBullets: IBenefit[] = [
                 icon: <Package size={26} />
             }
         ],
-        imageSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgbUl4rlsOypCdK5ZMfmBWMtTqr2MJOyt9Ow&s'
+        imageSrc: '/images/benefits/2.jpg'
     }
 ];

@@ -93,7 +93,7 @@ const BenefitSection: React.FC<Props> = ({ benefit, imageAtRight, isLast }: Prop
                         className={clsx('flex w-fit', { 'justify-start': imageAtRight, 'justify-end': !imageAtRight })}>
                         <Image
                             src={imageSrc}
-                            alt={`${title} - Fidjoo app screenshot`}
+                            alt={`${title} - Dansystemes`}
                             width='384'
                             height='762'
                             quality={100}
