@@ -17,15 +17,16 @@ const HomePage: React.FC = () => {
             <div>
                 <Hero />
                 <LogoCloud variant='all' />
-                <About />
-
-                <Benefits variant='bullets' />
                 <Services />
                 <LogoCloud
                     logos={logoCloudCloud}
                     title='Cloud & logiciels'
                     subtitle='Nous proposons une gamme complète de solutions de cloud et de logiciels pour votre entreprise.'
                 />
+                <About />
+
+                <Benefits variant='bullets' />
+
                 <FAQ />
             </div>
         </>
