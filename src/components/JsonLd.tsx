@@ -34,7 +34,7 @@ export function OrganizationJsonLd() {
         },
         contactPoint: {
             '@type': 'ContactPoint',
-            email: 'armand@dansystemes.com',
+            email: 'info@dansystemes.com',
             contactType: 'customer service',
             availableLanguage: ['French']
         }

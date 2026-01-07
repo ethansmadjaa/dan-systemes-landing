@@ -20,9 +20,9 @@ const FAQ: React.FC = () => {
                         Trouvez les réponses à vos questions ici
                     </p>
                     <a
-                        href='mailto:armand@dansystemes.com'
+                        href='mailto:info@dansystemes.com'
                         className='text-primary mt-3 block text-center text-xl font-semibold hover:underline lg:text-left lg:text-4xl'>
-                        armand@dansystemes.com
+                        info@dansystemes.com
                     </a>
                 </div>
 

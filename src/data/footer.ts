@@ -30,7 +30,7 @@ export const footerDetails: {
             url: '/delete'
         }
     ],
-    email: 'armand@dansystemes.com',
+    email: 'info@dansystemes.com',
     socials: {
         // github: 'https://github.com',
         // x: 'https://twitter.com/x',
