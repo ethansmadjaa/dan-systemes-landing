@@ -17,16 +17,16 @@ const Hero: React.FC = () => {
             <div className='bg-linear-gradient(to bottom, transparent, rgba(233,238,255,0.5), rgba(202,208,230,0.5)) absolute right-0 bottom-0 left-0 h-40 backdrop-blur-[2px]'></div>
 
             <div className='relative z-10 pb-10 text-center'>
-                <h1 className='text-foreground mx-auto max-w-lg text-4xl font-bold md:max-w-2xl md:text-6xl md:leading-tight'>
+                <h1 className='text-primary mx-auto max-w-2xl text-4xl font-bold md:max-w-4xl md:text-6xl md:leading-tight'>
                     {heroDetails.heading}
                 </h1>
-                <p className='text-foreground mx-auto mt-4 max-w-lg'>{heroDetails.subheading}</p>
+                <p className='text-foreground mx-auto mt-4 max-w-xl md:max-w-2xl'>{heroDetails.subheading}</p>
                 <div className='mx-auto mt-6 flex w-fit flex-col items-center sm:flex-row sm:gap-4'>
                     <Button
                         as={NextLink}
-                        href='/contact'
+                        href='/contact?source=project'
                         className='bg-accent text-accent-foreground border-primary-dark rounded-lg border-2 px-8 py-4 text-lg font-semibold shadow-[0_4px_0_0_var(--primary-dark)] transition-all duration-150 hover:translate-y-[2px] hover:shadow-[0_2px_0_0_var(--primary-dark)]'>
-                        Contactez-nous
+                        Parlez nous de votre projet
                     </Button>
                 </div>
             </div>

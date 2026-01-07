@@ -7,10 +7,36 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 
-const ContactForm: React.FC = () => {
+export type ContactFormVariant = 'default' | 'project';
+
+interface ContactFormProps {
+    variant?: ContactFormVariant;
+}
+
+const variantContent = {
+    default: {
+        title: 'Contactez-nous',
+        subtitle: "Une question ? Un projet ? N'hésitez pas à nous contacter.",
+        messagePlaceholder: 'Décrivez votre projet ou posez votre question...',
+        messageTitle: 'Message',
+        messageRequired: false
+    },
+    project: {
+        title: 'Parlez-nous de votre projet',
+        subtitle: 'Décrivez-nous votre projet et nous vous recontacterons rapidement.',
+        messagePlaceholder: 'Décrivez votre projet : objectifs, contraintes, délais...',
+        messageTitle: 'Parlez-nous de votre projet',
+        messageRequired: true
+    }
+};
+
+const ContactForm: React.FC<ContactFormProps> = ({ variant = 'default' }) => {
+    const content = variantContent[variant];
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
+        name: '',
         email: '',
+        phone: '',
         company: '',
         message: ''
     });
@@ -45,15 +71,29 @@ const ContactForm: React.FC = () => {
 
             <div className='w-full max-w-lg'>
                 <div className='mb-10 text-center'>
-                    <h1 className='text-foreground text-3xl font-bold md:text-4xl'>Contactez-nous</h1>
-                    <p className='text-muted-foreground mt-3'>
-                        Une question ? Un projet ? N&apos;hésitez pas à nous contacter.
-                    </p>
+                    <h1 className='text-foreground text-3xl font-bold md:text-4xl'>{content.title}</h1>
+                    <p className='text-muted-foreground mt-3'>{content.subtitle}</p>
                 </div>
 
                 <form
                     onSubmit={handleSubmit}
                     className='bg-card/50 space-y-6 rounded-xl border p-6 shadow-sm backdrop-blur-sm md:p-8'>
+                    <div className='space-y-2'>
+                        <Label htmlFor='name'>
+                            Nom <span className='text-destructive'>*</span>
+                        </Label>
+                        <Input
+                            id='name'
+                            name='name'
+                            type='text'
+                            placeholder='Votre nom'
+                            required
+                            value={formData.name}
+                            onChange={handleChange}
+                            className='bg-white'
+                        />
+                    </div>
+
                     <div className='space-y-2'>
                         <Label htmlFor='email'>
                             Email <span className='text-destructive'>*</span>
@@ -87,12 +127,29 @@ const ContactForm: React.FC = () => {
                     </div>
 
                     <div className='space-y-2'>
-                        <Label htmlFor='message'>Message (facultatif)</Label>
+                        <Label htmlFor='phone'>Téléphone (facultatif)</Label>
+                        <Input
+                            id='phone'
+                            name='phone'
+                            type='tel'
+                            placeholder='06 12 34 56 78'
+                            value={formData.phone}
+                            onChange={handleChange}
+                            className='bg-white'
+                        />
+                    </div>
+
+                    <div className='space-y-2'>
+                        <Label htmlFor='message'>
+                            {content.messageTitle}{' '}
+                            {content.messageRequired ? <span className='text-destructive'>*</span> : ''}
+                        </Label>
                         <Textarea
                             id='message'
                             name='message'
-                            placeholder='Décrivez votre projet ou posez votre question...'
+                            placeholder={content.messagePlaceholder}
                             rows={5}
+                            required={content.messageRequired}
                             value={formData.message}
                             onChange={handleChange}
                             className='bg-white'

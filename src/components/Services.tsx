@@ -7,6 +7,8 @@ import { Badge } from '@/components/ui/badge';
 import { services } from '@/data/services';
 
 import { ArrowRight } from 'lucide-react';
+import LogoCloud from './ui/logo-cloud';
+import { logoCloudNetwork } from '@/data/logoCloud';
 
 const Services: React.FC = () => {
     return (
@@ -25,6 +27,10 @@ const Services: React.FC = () => {
                         Nous vous accompagnons sur l&apos;ensemble de vos besoins informatiques
                     </p>
                 </div>
+
+                <LogoCloud
+                    logos={logoCloudNetwork}
+                    />
 
                 {/* First row - 3 items */}
                 <div className='mb-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>

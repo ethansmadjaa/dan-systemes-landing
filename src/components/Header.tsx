@@ -42,14 +42,14 @@ const Header: React.FC = () => {
                     className='absolute inset-0 transition-opacity duration-500 ease-in-out'
                     style={{
                         background:
-                            'radial-gradient(ellipse at top left, var(--accent) 0%, var(--primary) 50%, var(--primary) 100%)',
+                            'radial-gradient(ellipse at top left, rgba(168, 200, 35, 0.5) 0%, rgba(12, 39, 96, 0.5) 50%, rgba(12, 39, 96, 0.5) 100%)',
                         opacity: isScrolled ? 0 : 1
                     }}
                 />
                 <div
                     className='absolute inset-0 transition-opacity duration-500 ease-in-out'
                     style={{
-                        background: 'linear-gradient(to right, rgba(168, 200, 35, 0.5), rgba(12, 39, 96, 0.5))',
+                        background: 'linear-gradient(to right, rgba(168, 200, 35, 0.25), rgba(12, 39, 96, 0.25))',
                         opacity: isScrolled ? 1 : 0
                     }}
                 />
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
                             isScrolled ? 'md:py-2' : 'md:py-5'
                         }`}>
                         {/* Logo */}
-                        <Link href={'/'} className='flex items-center rounded-lg bg-white/30 px-2 py-1'>
+                        <Link href={'/'} className='flex items-center'>
                             <Image
                                 src={siteDetails.siteLogo}
                                 alt={siteDetails.siteName}

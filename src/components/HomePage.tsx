@@ -20,11 +20,6 @@ const HomePage: React.FC = () => {
                 <About />
 
                 <Benefits variant='bullets' />
-                <LogoCloud
-                    logos={logoCloudNetwork}
-                    title='Réseau, sécurité & infrastructure'
-                    subtitle="Nous proposons une gamme complète de solutions de réseau, de sécurité et d'infrastructure pour votre entreprise."
-                />
                 <Services />
                 <LogoCloud
                     logos={logoCloudCloud}
