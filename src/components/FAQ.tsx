@@ -21,7 +21,7 @@ const FAQ: React.FC = () => {
                     </p>
                     <a
                         href='mailto:info@dansystemes.com'
-                        className='text-primary mt-3 block text-center text-xl font-semibold hover:underline lg:text-left lg:text-4xl'>
+                        className='text-primary mt-3 block text-center text-lg font-semibold hover:underline lg:text-left lg:text-xl'>
                         info@dansystemes.com
                     </a>
                 </div>
@@ -32,8 +32,8 @@ const FAQ: React.FC = () => {
                             <Disclosure>
                                 {({ open }) => (
                                     <>
-                                        <DisclosureButton className='border-secondary flex w-full items-center justify-between border-t px-4 pt-7 text-left text-lg'>
-                                            <span className='text-foreground text-2xl font-semibold'>
+                                        <DisclosureButton className='border-secondary flex w-full items-center justify-between border-t px-4 pt-7 text-left text-base'>
+                                            <span className='text-foreground text-lg font-semibold lg:text-xl'>
                                                 {faq.question}
                                             </span>
                                             {open ? (

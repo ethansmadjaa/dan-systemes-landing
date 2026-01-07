@@ -6,6 +6,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { generateEmailTemplate } from '@/lib/emailTemplate';
+
+import { toast } from 'sonner';
 
 export type ContactFormVariant = 'default' | 'project';
 
@@ -45,17 +48,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ variant = 'default' }) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // TODO: Implement email sending logic
-        // - Use a service like Resend, SendGrid, or Nodemailer
-        // - Create an API route in /api/contact
-        // - Send formData to the API route
-        console.log('Form submitted:', formData);
-
-        // Simulate submission delay
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        const response = await fetch('/api/mail', {
+            method: 'POST',
+            body: JSON.stringify(formData)
+        });
 
         setIsSubmitting(false);
-        // TODO: Show success/error toast notification
+        if (response.ok) {
+            toast.success('Votre demande a été envoyée avec succès');
+        } else {
+            toast.error("Une erreur est survenue lors de l'envoi du message");
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -74,6 +77,38 @@ const ContactForm: React.FC<ContactFormProps> = ({ variant = 'default' }) => {
                     <h1 className='text-foreground text-3xl font-bold md:text-4xl'>{content.title}</h1>
                     <p className='text-muted-foreground mt-3'>{content.subtitle}</p>
                 </div>
+                {process.env.NODE_ENV === 'development' && (
+                    <>
+                        <div className='flex flex-col gap-4'>
+                            <Button
+                                onClick={() => {
+                                    setFormData({
+                                        name: 'John Doe',
+                                        email: 'ethan@smadja.biz',
+                                        phone: '1234567890',
+                                        company: 'Example Inc.',
+                                        message: 'Test message'
+                                    });
+                                }}>
+                                Fill form
+                            </Button>
+                        </div>
+
+                        <div
+                            className='mt-4 rounded-lg border bg-white p-4'
+                            dangerouslySetInnerHTML={{
+                                __html: generateEmailTemplate({
+                                    name: 'John Doe',
+                                    email: 'ethan@smadja.biz',
+                                    phone: '1234567890',
+                                    company: 'Example Inc.',
+                                    message: 'Test message'
+                                })
+                            }}
+                        />
+                    </>
+                )}
+                <div className='flex flex-col gap-4'></div>
 
                 <form
                     onSubmit={handleSubmit}

@@ -31,11 +31,11 @@ const Footer: React.FC = () => {
                             Votre partenaire IT depuis 2003
                         </span>
                     </Link>
-                    <p className='text-primary-foreground/80'>{siteDetails.metadata.description}</p>
+                    <p className='text-primary-foreground/80 text-sm'>{siteDetails.metadata.description}</p>
                 </div>
                 <div>
-                    <p className='mb-4 text-lg font-semibold'>Liens rapides</p>
-                    <ul className='text-primary-foreground/80' role='list' aria-label='Liens rapides'>
+                    <p className='mb-4 text-base font-semibold'>Liens rapides</p>
+                    <ul className='text-primary-foreground/80 text-sm' role='list' aria-label='Liens rapides'>
                         {menuItems.map((item, index) => (
                             <li key={index} className='mb-2'>
                                 <Link href={item.url} className='hover:text-primary-foreground'>
@@ -46,12 +46,12 @@ const Footer: React.FC = () => {
                     </ul>
                 </div>
                 <div>
-                    <p className='mb-4 text-lg font-semibold'>Contact</p>
+                    <p className='mb-4 text-base font-semibold'>Contact</p>
 
                     {footerDetails.email && (
                         <a
                             href={`mailto:${footerDetails.email}`}
-                            className='text-primary-foreground/80 hover:text-primary-foreground block'
+                            className='text-primary-foreground/80 hover:text-primary-foreground block text-sm'
                             aria-label={`Envoyer un email à ${footerDetails.email}`}>
                             Email: {footerDetails.email}
                         </a>
@@ -60,14 +60,14 @@ const Footer: React.FC = () => {
                     {footerDetails.telephone && (
                         <a
                             href={`tel:${footerDetails.telephone}`}
-                            className='text-primary-foreground/80 hover:text-primary-foreground block'
+                            className='text-primary-foreground/80 hover:text-primary-foreground block text-sm'
                             aria-label={`Appeler le ${footerDetails.telephone}`}>
                             Téléphone: {footerDetails.telephone}
                         </a>
                     )}
 
-                    <div className='justify-left flex pt-10'>
-                        <Button asChild variant='accent' size='xl'>
+                    <div className='justify-left flex pt-8'>
+                        <Button asChild variant='accent' size='lg'>
                             <Link href='/contact?source=project'>Un projet IT ? Parlons-en</Link>
                         </Button>
                     </div>
