@@ -132,6 +132,11 @@
     body {
         @apply bg-background text-foreground;
     }
+
+    /* Offset for anchor links to account for fixed header */
+    [id] {
+        scroll-margin-top: 100px;
+    }
 }
 
 /* Logo cloud infinite scroll animation */
