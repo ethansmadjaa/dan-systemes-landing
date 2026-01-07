@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
             <HomePageJsonLd />
             <div>
                 <Hero />
-                <LogoCloud logos={logoCloudWorkstation} />
+                <LogoCloud variant='all' />
                 <About />
 
                 <Benefits variant='bullets' />
