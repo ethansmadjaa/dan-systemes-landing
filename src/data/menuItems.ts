@@ -22,3 +22,11 @@ export const menuItems: IMenuItem[] = [
         highlight: true
     }
 ];
+
+export const footerMenuItems: IMenuItem[] = [
+    {
+        text: 'Mentions légales',
+        url: '/legal',
+        highlight: false
+    }
+];

@@ -1,6 +1,8 @@
+import { Suspense } from 'react';
+
 import type { Metadata } from 'next';
 
-import ContactForm, { type ContactFormVariant } from '@/components/ContactForm';
+import ContactForm from '@/components/ContactForm';
 import { ContactJsonLd } from '@/components/JsonLd';
 import { siteDetails } from '@/data/siteDetails';
 
@@ -28,18 +30,13 @@ export const metadata: Metadata = {
     }
 };
 
-interface ContactPageProps {
-    searchParams: Promise<{ source?: string }>;
-}
-
-export default async function ContactPage({ searchParams }: ContactPageProps) {
-    const { source } = await searchParams;
-    const variant: ContactFormVariant = source === 'project' ? 'project' : 'default';
-
+export default function ContactPage() {
     return (
         <>
             <ContactJsonLd />
-            <ContactForm variant={variant} />
+            <Suspense>
+                <ContactForm />
+            </Suspense>
         </>
     );
 }

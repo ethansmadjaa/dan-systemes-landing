@@ -1,5 +1,6 @@
 import { IMenuItem, ISocials } from '@/types';
 
+import { footerMenuItems } from './menuItems';
 import { siteDetails } from './siteDetails';
 
 export const footerDetails: {
@@ -10,7 +11,7 @@ export const footerDetails: {
     socials: ISocials;
 } = {
     subheading: siteDetails.metadata.description,
-    quickLinks: [],
+    quickLinks: footerMenuItems,
     email: 'info@dansystemes.com',
     socials: {}
 };

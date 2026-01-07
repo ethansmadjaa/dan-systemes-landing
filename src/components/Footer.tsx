@@ -11,6 +11,8 @@ import { menuItems } from '@/data/menuItems';
 import { siteDetails } from '@/data/siteDetails';
 
 const Footer: React.FC = () => {
+    const links = [...menuItems, ...footerDetails.quickLinks];
+
     return (
         <footer
             role='contentinfo'
@@ -36,7 +38,7 @@ const Footer: React.FC = () => {
                 <div>
                     <p className='mb-4 text-base font-semibold'>Liens rapides</p>
                     <ul className='text-primary-foreground/80 text-sm' role='list' aria-label='Liens rapides'>
-                        {menuItems.map((item, index) => (
+                        {links.map((item, index) => (
                             <li key={index} className='mb-2'>
                                 <Link href={item.url} className='hover:text-primary-foreground'>
                                     {item.text}

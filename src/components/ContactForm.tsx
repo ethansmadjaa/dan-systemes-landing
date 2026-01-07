@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 
+import { useSearchParams } from 'next/navigation';
+
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -11,10 +13,6 @@ import { generateEmailTemplate } from '@/lib/emailTemplate';
 import { toast } from 'sonner';
 
 export type ContactFormVariant = 'default' | 'project';
-
-interface ContactFormProps {
-    variant?: ContactFormVariant;
-}
 
 const variantContent = {
     default: {
@@ -33,7 +31,10 @@ const variantContent = {
     }
 };
 
-const ContactForm: React.FC<ContactFormProps> = ({ variant = 'default' }) => {
+const ContactForm: React.FC = () => {
+    const searchParams = useSearchParams();
+    const source = searchParams.get('source');
+    const variant: ContactFormVariant = source === 'project' ? 'project' : 'default';
     const content = variantContent[variant];
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
