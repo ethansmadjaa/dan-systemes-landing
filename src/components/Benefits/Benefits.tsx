@@ -8,7 +8,7 @@ const Benefits: React.FC<{ variant: 'text' | 'bullets' }> = ({ variant }) => {
     const benefits = variant === 'text' ? benefitsText : benefitsBullets;
 
     return (
-        <div id='accompaniment'>
+        <div id='mission'>
             <h2 className='sr-only'>Notre accompagnement</h2>
             {benefits.map((item, index) => {
                 return (

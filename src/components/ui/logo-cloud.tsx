@@ -64,9 +64,9 @@ const LogoCloud = ({ title, subtitle, logos, variant = 'logo', className }: Logo
                     <div className='from-background pointer-events-none absolute top-0 right-0 z-10 h-full w-16 bg-linear-to-l to-transparent md:w-32' />
 
                     {/* Scrolling track */}
-                    <div className='animate-scroll flex'>
+                    <div className='animate-scroll flex w-max'>
                         {/* First set of logos */}
-                        <div className='flex shrink-0 items-center gap-8 px-4 md:gap-12'>
+                        <div className='flex shrink-0 items-center gap-8 pr-8 md:gap-12 md:pr-12'>
                             {displayLogos.map((item, index) => (
                                 <Link
                                     key={`first-${index}`}
@@ -92,7 +92,7 @@ const LogoCloud = ({ title, subtitle, logos, variant = 'logo', className }: Logo
                             ))}
                         </div>
                         {/* Duplicate set for seamless loop */}
-                        <div className='flex shrink-0 items-center gap-8 px-4 md:gap-12'>
+                        <div className='flex shrink-0 items-center gap-8 pr-8 md:gap-12 md:pr-12'>
                             {displayLogos.map((item, index) => (
                                 <Link
                                     key={`second-${index}`}

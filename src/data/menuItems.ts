@@ -12,8 +12,8 @@ export const menuItems: IMenuItem[] = [
         highlight: false
     },
     {
-        text: 'Notre accompagnement',
-        url: '/#accompaniment',
+        text: 'Notre mission',
+        url: '/#mission',
         highlight: false
     },
     {
