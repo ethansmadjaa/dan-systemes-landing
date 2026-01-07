@@ -68,7 +68,7 @@ const Header: React.FC = () => {
                                 className='h-auto w-[90px] md:w-[180px]'
                             />
                             <span
-                                className={`-mt-1 text-[8px] italic md:-mt-2 md:text-xs ${isScrolled ? 'text-primary' : 'text-primary-foreground'}`}>
+                                className={`-mt-1 text-[8px] font-bold italic md:-mt-2 md:text-xs ${isScrolled ? 'text-primary' : 'text-primary-foreground'}`}>
                                 Votre partenaire IT depuis 2003
                             </span>
                         </Link>

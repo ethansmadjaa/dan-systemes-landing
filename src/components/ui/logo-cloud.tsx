@@ -51,7 +51,7 @@ const LogoCloud = ({ title, subtitle, logos, variant = 'logo', className }: Logo
                     {/* Header */}
                     {(title || subtitle) && (
                         <div className='mb-10 space-y-3 text-center'>
-                            {title && <h3 className='text-primary text-xl font-semibold md:text-2xl'>{title}</h3>}
+                            {title && <h2 className='text-primary text-xxl font-semibold md:text-2xl'>{title}</h2>}
                             {subtitle && <p className='text-muted-foreground text-sm md:text-base'>{subtitle}</p>}
                         </div>
                     )}
@@ -131,7 +131,7 @@ const LogoCloud = ({ title, subtitle, logos, variant = 'logo', className }: Logo
                     {/* Header */}
                     {(title || subtitle) && (
                         <div className='mb-10 space-y-3 text-center'>
-                            {title && <h3 className='text-primary text-xl font-semibold md:text-2xl'>{title}</h3>}
+                            {title && <h2 className='text-primary text-xl font-semibold md:text-2xl'>{title}</h2>}
                             {subtitle && <p className='text-muted-foreground text-sm md:text-base'>{subtitle}</p>}
                         </div>
                     )}
