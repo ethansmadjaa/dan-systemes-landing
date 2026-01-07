@@ -9,7 +9,7 @@ export const faqs: IFAQ[] = [
     },
     {
         question: `À quels types d’entreprises vous adressez-vous ?`,
-        answer: `Nous accompagnons principalement les PME et les ETI, tous secteurs confondus, en leur proposant des solutions IT adaptées à leurs enjeux métiers, à leur taille et à leur budget.`
+        answer: `Nous accompagnons les grands comptes mais aussi les PME et les ETI, tous secteurs confondus, en leur proposant des solutions IT adaptées à leurs enjeux métiers, à leur taille et à leur budget.`
     },
     {
         question: `Êtes-vous un revendeur multi-constructeurs ?`,
