@@ -11,6 +11,10 @@ Landing page SEO-optimisée pour Dan Systèmes, revendeur électronique/informat
 ![shadcn/ui](https://img.shields.io/badge/shadcn/ui-latest-000000?style=flat-square)
 ![pnpm](https://img.shields.io/badge/pnpm-10-F69220?style=flat-square&logo=pnpm)
 
+## Live demo 
+
+The website is live at [Dan Systemes](https://dansystemes.com)
+
 ## Scripts
 
 ```bash

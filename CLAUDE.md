@@ -92,3 +92,5 @@ pnpm build
 ```
 
 each page should have a cannonical url a metadata tag and everything related to seo
+
+the website is live at dansystemes.com
