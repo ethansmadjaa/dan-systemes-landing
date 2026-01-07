@@ -7,8 +7,8 @@ export const menuItems: IMenuItem[] = [
         highlight: false
     },
     {
-        text: 'Notre offre',
-        url: '/#offer',
+        text: 'Notre expertise',
+        url: '/#expertise',
         highlight: false
     },
     {

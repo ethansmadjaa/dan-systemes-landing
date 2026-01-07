@@ -12,13 +12,13 @@ import { ArrowRight } from 'lucide-react';
 
 const Services: React.FC = () => {
     return (
-        <section id='offer' className='py-20 md:py-28'>
+        <section id='expertise' className='py-20 md:py-28'>
             <Container>
                 <div className='mb-16 text-center'>
                     <Badge
                         variant='secondary'
                         className='bg-accent/20 text-accent-foreground border-accent/30 mb-4 px-4 py-1.5 text-sm font-medium'>
-                        Notre offre
+                        Notre expertise
                     </Badge>
                     <h2 className='text-primary text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl'>
                         Une offre IT <span className='text-accent'>complète</span>
