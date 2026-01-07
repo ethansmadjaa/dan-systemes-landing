@@ -1,6 +1,6 @@
 import { IService } from '@/types';
 
-import { Cloud, FileBox, Headphones, Monitor, Shield } from 'lucide-react';
+import { Cloud, FileBox, Headphones, Monitor, Network, Shield } from 'lucide-react';
 
 export const services: IService[] = [
     {
@@ -56,6 +56,17 @@ export const services: IService[] = [
             'Conseil et accompagnement personnalisé',
             'Déploiement et mise en production',
             'Support et suivi dans la durée'
+        ]
+    },
+    {
+        title: 'Réseau & Infrastructure',
+        description:
+            'Nous concevons, déployons et maintenons des infrastructures réseau fiables et évolutives, adaptées aux besoins actuels et futurs des entreprises. Notre priorité : performance, sécurité et stabilité.',
+        icon: <Network size={32} />,
+        features: [
+            'Mise en place et sécurisation de réseaux filaires et Wi-Fi',
+            'Installation et configuration de serveurs et équipements réseau',
+            'Optimisation et supervision des infrastructures existantes'
         ]
     }
 ];
