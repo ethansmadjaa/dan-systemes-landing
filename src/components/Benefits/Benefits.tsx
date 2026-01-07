@@ -8,8 +8,8 @@ const Benefits: React.FC<{ variant: 'text' | 'bullets' }> = ({ variant }) => {
     const benefits = variant === 'text' ? benefitsText : benefitsBullets;
 
     return (
-        <div id='offer'>
-            <h2 className='sr-only'>Notre Positionnement</h2>
+        <div id='accompaniment'>
+            <h2 className='sr-only'>Notre accompagnement</h2>
             {benefits.map((item, index) => {
                 return (
                     <BenefitSection

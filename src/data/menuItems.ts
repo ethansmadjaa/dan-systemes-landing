@@ -7,13 +7,13 @@ export const menuItems: IMenuItem[] = [
         highlight: false
     },
     {
-        text: 'Nos services',
-        url: '/#services',
+        text: 'Notre offre',
+        url: '/#offer',
         highlight: false
     },
     {
-        text: 'Notre offre',
-        url: '/#offer',
+        text: 'Notre accompagnement',
+        url: '/#accompaniment',
         highlight: false
     },
     {
