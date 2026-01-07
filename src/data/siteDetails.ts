@@ -1,6 +1,6 @@
 export const siteDetails = {
     siteName: 'Dan Systèmes',
-    siteUrl: 'https://www.dansystemes.fr',
+    siteUrl: 'https://www.dansystemes.com',
     metadata: {
         title: 'Dan Systèmes | Solutions IT pour les entreprises',
         description:
