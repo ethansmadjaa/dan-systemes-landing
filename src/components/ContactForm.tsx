@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { useSearchParams } from 'next/navigation';
 
@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { generateEmailTemplate } from '@/lib/emailTemplate';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 import { toast } from 'sonner';
 
@@ -37,6 +38,8 @@ const ContactForm: React.FC = () => {
     const variant: ContactFormVariant = source === 'project' ? 'project' : 'default';
     const content = variantContent[variant];
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+    const captchaRef = useRef<HCaptcha>(null);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -47,14 +50,24 @@ const ContactForm: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!captchaToken) {
+            toast.error('Veuillez compléter le captcha');
+
+            return;
+        }
+
         setIsSubmitting(true);
 
         const response = await fetch('/api/mail', {
             method: 'POST',
-            body: JSON.stringify(formData)
+            body: JSON.stringify({ ...formData, captchaToken })
         });
 
         setIsSubmitting(false);
+        captchaRef.current?.resetCaptcha();
+        setCaptchaToken(null);
+
         if (response.ok) {
             toast.success('Votre demande a été envoyée avec succès');
         } else {
@@ -189,6 +202,15 @@ const ContactForm: React.FC = () => {
                             value={formData.message}
                             onChange={handleChange}
                             className='bg-white'
+                        />
+                    </div>
+
+                    <div className='flex justify-center'>
+                        <HCaptcha
+                            sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY!}
+                            onVerify={setCaptchaToken}
+                            onExpire={() => setCaptchaToken(null)}
+                            ref={captchaRef}
                         />
                     </div>
 
