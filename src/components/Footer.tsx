@@ -5,6 +5,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Button } from '@/components/ui/button';
 import { footerDetails } from '@/data/footer';
 import { menuItems } from '@/data/menuItems';
 import { siteDetails } from '@/data/siteDetails';
@@ -57,6 +58,12 @@ const Footer: React.FC = () => {
                             Téléphone: {footerDetails.telephone}
                         </a>
                     )}
+
+                    <div className='justify-left flex pt-10'>
+                        <Button asChild variant='accent' size='xl'>
+                            <Link href='/contact?source=project'>Un projet IT ? Parlons-en</Link>
+                        </Button>
+                    </div>
 
                     {footerDetails.socials && (
                         <div className='mt-5 flex flex-wrap items-center gap-5'>

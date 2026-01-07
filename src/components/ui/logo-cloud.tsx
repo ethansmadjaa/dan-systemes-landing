@@ -64,7 +64,7 @@ const LogoCloud = ({ title, subtitle, logos, variant = 'logo', className }: Logo
                     <div className='from-background pointer-events-none absolute top-0 right-0 z-10 h-full w-16 bg-linear-to-l to-transparent md:w-32' />
 
                     {/* Scrolling track */}
-                    <div className='animate-scroll flex w-max'>
+                    <div className='animate-scroll-slow flex w-max'>
                         {/* First set of logos */}
                         <div className='flex shrink-0 items-center gap-8 pr-8 md:gap-12 md:pr-12'>
                             {displayLogos.map((item, index) => (

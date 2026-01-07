@@ -26,7 +26,6 @@ const Services: React.FC = () => {
                     <p className='text-muted-foreground mx-auto mt-4 max-w-2xl text-lg'>
                         Nous vous accompagnons sur l&apos;ensemble de vos besoins informatiques
                     </p>
-                    <LogoCloud logos={logoCloudNetwork} />
                 </div>
 
                 {/* Services grid - 2 rows of 3 */}
