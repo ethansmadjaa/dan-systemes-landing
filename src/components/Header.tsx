@@ -59,7 +59,7 @@ const Header: React.FC = () => {
                             isScrolled ? 'md:py-2' : 'md:py-5'
                         }`}>
                         {/* Logo */}
-                        <Link href={'/'} className='flex items-center'>
+                        <Link href={'/'} className='flex flex-col items-start'>
                             <Image
                                 src={siteDetails.siteLogo}
                                 alt={siteDetails.siteName}
@@ -67,6 +67,10 @@ const Header: React.FC = () => {
                                 height={75}
                                 className='h-auto w-[90px] md:w-[180px]'
                             />
+                            <span
+                                className={`-mt-1 text-[8px] italic md:-mt-2 md:text-xs ${isScrolled ? 'text-primary' : 'text-primary-foreground'}`}>
+                                Votre partenaire IT depuis 2003
+                            </span>
                         </Link>
 
                         {/* Desktop Menu */}

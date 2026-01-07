@@ -19,8 +19,11 @@ const Footer: React.FC = () => {
             }}>
             <div className='mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-3'>
                 <div>
-                    <Link href='/' className='mb-4 flex w-fit items-center rounded-lg bg-white/30 px-2 py-1'>
+                    <Link href='/' className='mb-4 flex w-fit flex-col items-start'>
                         <Image src={siteDetails.siteLogo} alt={siteDetails.siteName} width={180} height={75} />
+                        <span className='text-primary-foreground -mt-2 text-xs italic'>
+                            Votre partenaire IT depuis 2003
+                        </span>
                     </Link>
                     <p className='text-primary-foreground/80'>{siteDetails.metadata.description}</p>
                 </div>

@@ -17,9 +17,10 @@ const Hero: React.FC = () => {
             <div className='bg-linear-gradient(to bottom, transparent, rgba(233,238,255,0.5), rgba(202,208,230,0.5)) absolute right-0 bottom-0 left-0 h-40 backdrop-blur-[2px]'></div>
 
             <div className='relative z-10 pb-10 text-center'>
-                <h1 className='text-primary mx-auto max-w-2xl text-4xl font-bold md:max-w-4xl md:text-6xl md:leading-tight'>
-                    {heroDetails.heading}
-                </h1>
+                <h1
+                    className='text-primary mx-auto max-w-2xl text-4xl font-bold md:max-w-4xl md:text-6xl md:leading-tight'
+                    dangerouslySetInnerHTML={{ __html: heroDetails.heading }}
+                />
                 <p className='text-foreground mx-auto mt-4 max-w-xl md:max-w-2xl'>{heroDetails.subheading}</p>
                 <div className='mx-auto mt-6 flex w-fit flex-col items-center sm:flex-row sm:gap-4'>
                     <Button

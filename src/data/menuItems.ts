@@ -12,6 +12,11 @@ export const menuItems: IMenuItem[] = [
         highlight: false
     },
     {
+        text: 'Notre offre',
+        url: '/#offer',
+        highlight: false
+    },
+    {
         text: 'Contact',
         url: '/contact',
         highlight: true

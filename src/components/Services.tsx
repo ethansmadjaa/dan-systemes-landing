@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 import Container from '@/components/Container';
 import { Badge } from '@/components/ui/badge';
+import { logoCloudNetwork } from '@/data/logoCloud';
 import { services } from '@/data/services';
 
-import { ArrowRight } from 'lucide-react';
 import LogoCloud from './ui/logo-cloud';
-import { logoCloudNetwork } from '@/data/logoCloud';
+import { ArrowRight } from 'lucide-react';
 
 const Services: React.FC = () => {
     return (
@@ -21,16 +21,14 @@ const Services: React.FC = () => {
                         Nos Services
                     </Badge>
                     <h2 className='text-primary text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl'>
-                        Des solutions IT <span className='text-accent'>complètes</span>
+                        Une offre IT <span className='text-accent'>complète</span>
                     </h2>
                     <p className='text-muted-foreground mx-auto mt-4 max-w-2xl text-lg'>
                         Nous vous accompagnons sur l&apos;ensemble de vos besoins informatiques
                     </p>
                 </div>
 
-                <LogoCloud
-                    logos={logoCloudNetwork}
-                    />
+                <LogoCloud logos={logoCloudNetwork} />
 
                 {/* First row - 3 items */}
                 <div className='mb-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
