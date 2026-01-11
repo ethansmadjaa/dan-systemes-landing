@@ -98,6 +98,7 @@ const BenefitSection: React.FC<Props> = ({ benefit, imageAtRight, isLast }: Prop
                             height='762'
                             quality={100}
                             className='lg:ml-0'
+                            style={{ height: 'auto' }}
                         />
                     </div>
                 </div>

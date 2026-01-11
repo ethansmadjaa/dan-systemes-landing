@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { useSearchParams } from 'next/navigation';
 
@@ -108,6 +108,13 @@ const ContactForm: React.FC = () => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
+
+    // Cleanup hCaptcha on unmount to prevent errors when navigating away
+    useEffect(() => {
+        return () => {
+            captchaRef.current?.resetCaptcha();
+        };
+    }, []);
 
     return (
         <section className='relative flex items-center justify-center px-5 py-16 md:py-24'>
@@ -236,14 +243,20 @@ const ContactForm: React.FC = () => {
                         />
                     </div>
 
-                    <div className='flex justify-center'>
-                        <HCaptcha
-                            sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY!}
-                            onVerify={setCaptchaToken}
-                            onExpire={() => setCaptchaToken(null)}
-                            ref={captchaRef}
-                        />
-                    </div>
+                    {process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY ? (
+                        <div className='flex justify-center'>
+                            <HCaptcha
+                                sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY}
+                                onVerify={setCaptchaToken}
+                                onExpire={() => setCaptchaToken(null)}
+                                ref={captchaRef}
+                            />
+                        </div>
+                    ) : (
+                        <div className='border-destructive bg-destructive/10 text-destructive rounded-md border p-4 text-center text-sm'>
+                            ⚠️ Configuration du captcha manquante
+                        </div>
+                    )}
 
                     <Button
                         type='submit'
